@@ -1,0 +1,12 @@
+[file]
+prefix = "test_"
+number = 0
+path = "./"
+
+[start]
+x = 4501
+y = 52
+
+[end]
+x = 5066
+y = 1039
