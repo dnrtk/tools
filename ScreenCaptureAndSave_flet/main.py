@@ -123,14 +123,14 @@ class FletMain():
             scname = '{}{:03}.png'.format(g_cfg.get_current_value('prefix'), g_cfg.get_current_value('number'))
             scname = os.path.join(g_cfg.get_current_value('path'), scname)
             bbox = (
-                g_cfg.get_current_value('start_x'),
-                g_cfg.get_current_value('start_y'),
-                g_cfg.get_current_value('start_x') + g_cfg.get_current_value('width'),
-                g_cfg.get_current_value('start_y') + g_cfg.get_current_value('height'),
+                int(g_cfg.get_current_value('start_x')),
+                int(g_cfg.get_current_value('start_y')),
+                int(g_cfg.get_current_value('start_x')) + int(g_cfg.get_current_value('width')),
+                int(g_cfg.get_current_value('start_y')) + int(g_cfg.get_current_value('height')),
             )
             ImageGrab.grab(bbox=bbox, all_screens=True).save(scname)
             key = 'number'
-            g_cfg.set_current_value(key, g_cfg.get_current_value(key) + 1)
+            g_cfg.set_current_value(key, int(g_cfg.get_current_value(key)) + 1)
             print('save {}'.format(scname))
             self.update()
 
